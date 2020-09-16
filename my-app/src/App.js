@@ -1,18 +1,23 @@
-import React from 'react';
-import { ThemeProvider } from '@material-ui/core/styles';
-import DeepChild from "./DeepChild";
+import React from 'react'
+import {Button} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core/styles";
+import Header from "./components/header";
 
-const theme = {
-  background: '#000',
-};
+const useStyles = makeStyles({
+    root: {
+        height: "100vh",
+    }
+})
 
 function App() {
-  return (
-      <ThemeProvider theme={theme}>
-        <DeepChild />
-      </ThemeProvider>
+    const classes = useStyles();
+    return (
+        <div className={classes.root}>
+            <Header />
+        </div>
 
-  );
+
+    );
 }
 
 export default App;
