@@ -8,12 +8,12 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {Button} from "@material-ui/core";
 import useStyles from "./style";
-import { Typography } from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 import Pagination from '@material-ui/lab/Pagination';
 import arrow from "../../../../assets/img/arrow-up-circle.svg";
+import PenToolWhite from "../../../../icons/PenToolWhite";
 
-
-const createData = (name, posted, status,  stats, views, dots) => {
+const createData = (name, posted, status, stats, views, dots) => {
     return {name, posted, status, stats, views, dots};
 };
 
@@ -38,7 +38,7 @@ const BlogView = () => {
                             <TableCell className={classes.tableCell} align="left">Status</TableCell>
                             <TableCell className={classes.tableCell} align="left">Stats</TableCell>
                             <TableCell className={classes.tableCell} align="right">
-                                <Button className={classes.button}>Add new</Button>
+                                <Button startIcon={<PenToolWhite/>} className={classes.button}>Add new</Button>
                             </TableCell>
                         </TableRow>
                     </TableHead>
@@ -70,9 +70,9 @@ const BlogView = () => {
                                 </TableCell>
                                 <TableCell align="right" className={classes.cell}>
                                     <div className={classes.dots}>
-                                        <span className={classes.dot} />
-                                        <span className={classes.dot} />
-                                        <span className={classes.dot} />
+                                        <span className={classes.dot}/>
+                                        <span className={classes.dot}/>
+                                        <span className={classes.dot}/>
                                     </div>
                                 </TableCell>
                             </TableRow>
@@ -80,7 +80,8 @@ const BlogView = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Pagination count={3} hidePrevButton hideNextButton color="primary" classes={{ul: classes.ul}} className={classes.pagination}/>
+            <Pagination count={3} hidePrevButton hideNextButton color="primary" classes={{ul: classes.ul}}
+                        className={classes.pagination}/>
         </div>
 
     );
