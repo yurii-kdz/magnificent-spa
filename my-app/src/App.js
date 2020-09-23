@@ -1,7 +1,7 @@
 import React from 'react'
-import {Button} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import Header from "./components/Header/Header";
+import Body from "./components/Body/Body";
 
 const useStyles = makeStyles({
     root: {
@@ -14,6 +14,8 @@ const App = () => {
     return (
         <div className={classes.root}>
             <Header />
+            <Body />
+
         </div>
     );
 }
