@@ -1,9 +1,9 @@
 import React from 'react';
 import {SvgIcon} from '@material-ui/core';
 
-const PenToolWhite = () => {
+const PenToolWhite = (props) => {
     return (
-        <SvgIcon width="20" height="20" viewBox="0 0 20 20" fill="none" >
+        <SvgIcon {...props} >
             <path d="M10 15.8333L15.8333 10L18.3333 12.5L12.5 18.3333L10 15.8333Z" stroke="#FFFCFE" strokeLinecap="round" strokeLinejoin="round"/>
             <path fill="transparent" d="M15 10.8334L13.75 4.58335L1.66666 1.66669L4.58332 13.75L10.8333 15L15 10.8334Z" stroke="#FFFCFE" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M1.66666 1.66669L7.98832 7.98835" stroke="#FFFCFE" strokeLinecap="round" strokeLinejoin="round"/>

@@ -1,38 +1,24 @@
 import {makeStyles} from "@material-ui/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles (theme => ( {
     container: {
         backgroundColor: '#E5E5E5',
-        display: 'flex',
-        flexDirection: 'column',
-        margin: 0,
-        minHeight: '100vh',
-        padding: '72px 55px 153px 78px',
+        padding: theme.spacing(9, 7, 20, 10),
+        maxWidth: "300px",
+        marginRight: theme.spacing(4),
     },
-    item: {
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '18px',
-        lineHeight: '21px',
+    primary: {
+        fontSize: '1.125rem',
         color: "#2C5282",
-        margin: "0 0 0 15px",
+        whiteSpace: "nowrap",
+        margin: theme.spacing(0, 0, 0, 2),
     },
     img: {
-        height: "24px",
-        width: "24px",
-        marginRight: "13px"
-    },
-    listItem: {
-        padding: '0 0 30px 0',
-        display: "flex",
-
+        marginRight: theme.spacing(2)
     },
     list: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        paddingTop: "32px"
+        padding: theme.spacing(2, 0)
     },
-})
+}))
 
 export default useStyles;

@@ -1,16 +1,18 @@
 import React from "react";
 import Menu from "./Menu/Menu";
-import useStyles from "./style";
 import Content from "./Content/Content";
+import Grid from '@material-ui/core/Grid';
 
 const Body = () => {
-    const classes = useStyles();
-
     return(
-        <div className={classes.body}>
-            <Menu />
-            <Content />
-        </div>
+        <Grid container>
+            <Grid item>
+                <Menu />
+            </Grid>
+            <Grid item>
+                <Content />
+            </Grid>
+        </Grid>
     )
 };
 

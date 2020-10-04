@@ -1,9 +1,9 @@
 import React from 'react';
 import {SvgIcon} from '@material-ui/core';
 
-const Book = () => {
+const Book = (props) => {
     return (
-        <SvgIcon width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <SvgIcon {...props}>
             <path
                 fill="transparent"
                 d="M2 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7V21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H2V3Z"

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Typography, List, ListItem, ListItemText, Container} from "@material-ui/core";
+import {Typography, ListItem, ListItemText, Grid} from "@material-ui/core";
 import useStyles from "./style";
 import Home from "../../../icons/Home";
 import Image from "../../../icons/Image";
@@ -12,21 +12,20 @@ import Book from "../../../icons/Book";
 import Box from "../../../icons/Box";
 import Coffee from "../../../icons/Coffee";
 
-
 const menuItems = [
-    {text: "View site", icon: <Home/>},
-    {text: "Create page", icon: <FilePlus/>},
-    {text: "Blog articles", icon: <PenTool/>},
-    {text: "Files", icon: <Image/>},
-    {text: "Users", icon: <Users/>},
-    {text: "Subscriptions", icon: <Zap/>},
-    {text: "Archived pages", icon: <Trash/>}
+    {text: "View site", icon: <Home viewBox="0 0 24 24"/>},
+    {text: "Create page", icon: <FilePlus viewBox="0 0 24 24"/>},
+    {text: "Blog articles", icon: <PenTool viewBox="0 0 24 24"/>},
+    {text: "Files", icon: <Image viewBox="0 0 24 24"/>},
+    {text: "Users", icon: <Users viewBox="0 0 24 24"/>},
+    {text: "Subscriptions", icon: <Zap viewBox="0 0 24 24"/>},
+    {text: "Archived pages", icon: <Trash viewBox="0 0 24 24"/>}
 ];
 
 const menuItemsSecondary = [
-    {text: "Themes", icon: <Book/>},
-    {text: "Plugins", icon: <Box/>},
-    {text: "Update plans", icon: <Coffee/>},
+    {text: "Themes", icon: <Book viewBox="0 0 24 24"/>},
+    {text: "Plugins", icon: <Box viewBox="0 0 24 24"/>},
+    {text: "Update plans", icon: <Coffee viewBox="0 0 24 24"/>},
 ];
 
 const Menu = () => {
@@ -35,36 +34,32 @@ const Menu = () => {
     let menuItem = menuItems.map(i =>
         <ListItem className={classes.listItem}>
             {i.icon}
-            <ListItemText className={classes.item}
-                          primary={i.text}
-            />
+            <ListItemText classes={{primary: classes.primary}} primary={i.text} />
         </ListItem>
     );
 
     let menuItemSecondary = menuItemsSecondary.map(i =>
         <ListItem className={classes.listItem}>
             {i.icon}
-            <ListItemText className={classes.item}
-                          primary={i.text}
-            />
+            <ListItemText classes={{primary: classes.primary}} primary={i.text} />
         </ListItem>
     )
 
     return (
-        <Container maxWidth="sm" className={classes.container}>
+        <Grid container className={classes.container}>
             <Typography variant="h6">
                 Manage
             </Typography>
-            <List className={classes.list}>
+            <Grid container className={classes.list}>
                 {menuItem}
-            </List>
+            </Grid>
             <Typography variant="h6">
                 Pro features
             </Typography>
-            <List className={classes.list}>
+            <Grid container className={classes.list}>
                 {menuItemSecondary}
-            </List>
-        </Container>
+            </Grid>
+        </Grid>
     )
 };
 
