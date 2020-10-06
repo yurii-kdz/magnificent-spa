@@ -1,13 +1,15 @@
 import React from 'react';
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell/TableCell";
-import {Typography, Grid} from "@material-ui/core";
+import {Typography, Grid, Box} from "@material-ui/core";
 import ArrowUp from "../../../../../icons/ArrowUp";
 import Dots from "../Dots";
 import TableBody from "@material-ui/core/TableBody";
 import useStyles from "./style";
-import rows from "./mockup";
+import rows from "./mockup"
+
 const BlogViewTableBody = (props) => {
+
     const classes = useStyles(props);
 
     return (
@@ -22,10 +24,12 @@ const BlogViewTableBody = (props) => {
                             {row.posted}
                         </Typography>
                     </TableCell>
-                    <TableCell align="center" className={classes.cell}>
-                        <Grid container justify="center" alignItems="center" className={classes[row.status]}  classes={{root: classes.root}}>
-                            {row.status}
-                        </Grid>
+                    <TableCell align="center" className={classes.cell} size="small" classes={{sizeSmall: classes.sizeSmall}}>
+                        <Box border={2} borderRadius="50px" className={classes[row.status]} >
+                            <Grid container justify="center" alignItems="center" classes={{root: classes.root}}>
+                                {row.status}
+                            </Grid>
+                        </Box>
                     </TableCell>
                     <TableCell align="center" className={classes.cell}>
                         <Grid container alignItems="center"className={classes.container}>
@@ -33,7 +37,7 @@ const BlogViewTableBody = (props) => {
                             <span className={classes.views}>{row.views}</span>
                             {row.stats > 0
                                 ? <ArrowUp/>
-                                : <span> </span>
+                                : null
                             }
                         </Grid>
                     </TableCell>

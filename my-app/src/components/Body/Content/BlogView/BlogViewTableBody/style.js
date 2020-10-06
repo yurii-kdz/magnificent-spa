@@ -2,22 +2,21 @@ import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles( theme =>({
     root: {
-        borderRadius: "50px",
-        width: "120px",
         height: "32px",
         textTransform:'capitalize',
     },
+
     scheduled: {
-        color: "#F6AD55",
-        border: "2px solid #F6AD55",
+        color: theme.palette.warning.main,
+        marginRight: theme.spacing(26),
     },
     draft: {
-        border: "2px solid #FC8181",
-        color: "#FC8181"
+        color: theme.palette.error.main,
+        marginRight: theme.spacing(26),
     },
     published: {
-        border: "2px solid #9ae6b4",
-        color: "#9ae6b4",
+        color: theme.palette.success.main,
+        marginRight: theme.spacing(26),
     },
     views: {
         fontSize: "14px",
@@ -27,7 +26,7 @@ const useStyles = makeStyles( theme =>({
     stats: {
         fontWeight: "bold",
         fontSize: "20px",
-        color: "#2A4365",
+        color: theme.palette.primary.main,
     },
     row: {
         height: "100px",

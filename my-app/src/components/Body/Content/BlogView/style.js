@@ -20,11 +20,8 @@ const useStyles = makeStyles( theme =>({
         height: "5px",
         width: "5px"
     },
-
-    pagination: {
-        fontSize: "16px"
-    },
     ul: {
+        fontSize: "16px",
         "& li" : {
             "& button" : {
                 background: "#e2e8f0",
