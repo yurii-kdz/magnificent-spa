@@ -6,33 +6,31 @@ import data from "./mockup";
 const Menu = () => {
     const classes = useStyles();
 
-    let menuItem = data.menuItems.map(i =>
-        <ListItem>
-            {i.icon}
-            <ListItemText classes={{primary: classes.primary}} primary={i.text}/>
-        </ListItem>
-    );
-
-    let menuItemSecondary = data.menuItemsSecondary.map(i =>
-        <ListItem className={classes.listItem}>
-            {i.icon}
-            <ListItemText classes={{primary: classes.primary}} primary={i.text}/>
-        </ListItem>
-    )
-
     return (
         <Grid container className={classes.container}>
             <Typography variant="h6">
                 Manage
             </Typography>
             <Grid container className={classes.list}>
-                {menuItem}
+                {
+                    data.menuItems.map(i =>
+                        <ListItem>
+                            {i.icon}
+                            <ListItemText classes={{primary: classes.primary}} primary={i.text}/>
+                        </ListItem>
+                )}
             </Grid>
-            <Typography variant="h6">
+            <Typography variant="h6" classes={{root: classes.root}}>
                 Pro features
             </Typography>
             <Grid container className={classes.list}>
-                {menuItemSecondary}
+                {
+                    data.menuItemsSecondary.map(i =>
+                        <ListItem className={classes.listItem}>
+                            {i.icon}
+                            <ListItemText classes={{primary: classes.primary}} primary={i.text}/>
+                        </ListItem>
+                    )}
             </Grid>
         </Grid>
     )

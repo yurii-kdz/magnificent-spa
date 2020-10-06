@@ -20,7 +20,7 @@ const useStyles = makeStyles( theme =>({
     },
     views: {
         fontSize: "14px",
-        color: "#A0AEC0",
+        color: theme.palette.grey[600],
         margin: theme.spacing(0, 1)
     },
     stats: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles( theme =>({
     },
     row: {
         height: "100px",
-        background: "#F7FAFC",
+        background: theme.palette.grey[100],
         padding: theme.spacing(0, 4, 0, 6)
     },
     cell: {

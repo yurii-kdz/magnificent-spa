@@ -16,7 +16,7 @@ const useStyles = makeStyles( theme =>({
         display: "block",
         borderRadius: "50%",
         marginRight: theme.spacing(0.5),
-        background: "#718096",
+        background: theme.palette.grey.A700,
         height: "5px",
         width: "5px"
     },
@@ -24,8 +24,8 @@ const useStyles = makeStyles( theme =>({
         fontSize: "16px",
         "& li" : {
             "& button" : {
-                background: "#e2e8f0",
-                color: "#2c5282",
+                background: theme.palette.grey[100],
+                color: theme.palette.primary.main,
                 fontWeight: 700
             }
         }

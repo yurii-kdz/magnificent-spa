@@ -16,7 +16,7 @@ const BlogView = (props) => {
     return (
         <Grid container justify="center">
             <TableContainer classes={{root: classes.root}} component={Grid}>
-                <Table className={classes.table} aria-label="simple table">
+                <Table className={classes.table}>
                     <TableHead>
                         <TableRow>
                             <TableCell variant="head" classes={{head: classes.head}} align="left">Title</TableCell>
