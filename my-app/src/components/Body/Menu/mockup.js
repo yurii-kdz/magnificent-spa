@@ -12,18 +12,18 @@ import Coffee from "../../../icons/Coffee";
 
 const data = {
     menuItems : [
-        {text: "View site", icon: <Home viewBox="0 0 24 24"/>},
-        {text: "Create page", icon: <FilePlus viewBox="0 0 24 24"/>},
-        {text: "Blog articles", icon: <PenTool viewBox="0 0 24 24"/>},
-        {text: "Files", icon: <Image viewBox="0 0 24 24"/>},
-        {text: "Users", icon: <Users viewBox="0 0 24 24"/>},
-        {text: "Subscriptions", icon: <Zap viewBox="0 0 24 24"/>},
-        {text: "Archived pages", icon: <Trash viewBox="0 0 24 24"/>}
+        {text: "View site", icon: <Home viewBox="0 0 24 24"/>, route: "/"},
+        {text: "Create page", icon: <FilePlus viewBox="0 0 24 24"/>, route: "/createView"},
+        {text: "Blog articles", icon: <PenTool viewBox="0 0 24 24"/>, route: "/"},
+        {text: "Files", icon: <Image viewBox="0 0 24 24"/>, route: "/"},
+        {text: "Users", icon: <Users viewBox="0 0 24 24"/>, route: "/"},
+        {text: "Subscriptions", icon: <Zap viewBox="0 0 24 24"/>, route: "/"},
+        {text: "Archived pages", icon: <Trash viewBox="0 0 24 24"/>, route: "/"}
     ],
     menuItemsSecondary : [
-        {text: "Themes", icon: <Book viewBox="0 0 24 24"/>},
-        {text: "Plugins", icon: <Box viewBox="0 0 24 24"/>},
-        {text: "Update plans", icon: <Coffee viewBox="0 0 24 24"/>},
+        {text: "Themes", icon: <Book viewBox="0 0 24 24"/>, route: "/"},
+        {text: "Plugins", icon: <Box viewBox="0 0 24 24"/>, route: "/"},
+        {text: "Update plans", icon: <Coffee viewBox="0 0 24 24"/>, route: "/"},
     ]
 
 };

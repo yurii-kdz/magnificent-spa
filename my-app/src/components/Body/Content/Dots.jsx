@@ -1,5 +1,5 @@
 import React from 'react';
-import useStyles from "./style";
+import useStyles from "./BlogView/style";
 import Grid from "@material-ui/core/Grid";
 const Dots = () => {
 

@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 const Body = () => {
     return(
-        <Grid container>
+        <Grid container wrap="nowrap">
             <Grid item>
                 <Menu />
             </Grid>

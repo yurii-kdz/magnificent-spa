@@ -13,8 +13,20 @@ const useStyles = makeStyles (theme => ( {
         whiteSpace: "nowrap",
         margin: theme.spacing(0, 0, 0, 2),
     },
+    link: {
+        textDecoration: "none",
+        color: 'red',
+        '& active' : {
+            "& before " : {
+                display: 'block',
+                width: '10px',
+                height: '10px',
+                backgroundColor: 'red'
+            }
+        }
+    },
     root: {
-        padding: theme.spacing(1.5,0)
+        padding: theme.spacing(1.5,0),
     },
     img: {
         marginRight: theme.spacing(2)

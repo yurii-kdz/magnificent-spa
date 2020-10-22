@@ -3,19 +3,18 @@ import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell/TableCell";
 import {Typography, Grid, Box} from "@material-ui/core";
 import ArrowUp from "../../../../../icons/ArrowUp";
-import Dots from "../Dots";
+import Dots from "../../Dots";
 import TableBody from "@material-ui/core/TableBody";
 import useStyles from "./style";
-import rows from "./mockup"
 
-const BlogViewTableBody = (props) => {
+const BlogViewTableBody = ({items}) => {
 
-    const classes = useStyles(props);
+    const classes = useStyles();
 
     return (
         <TableBody>
-            {rows.map((row) => (
-                <TableRow key={row.name} className={classes.row}>
+            {items.map((row, index) => (
+                <TableRow key={index} className={classes.row}>
                     <TableCell component="th" scope="row" className={classes.cell}>
                         <Typography variant="h3" className={classes.name}>
                             {row.name}
@@ -24,15 +23,16 @@ const BlogViewTableBody = (props) => {
                             {row.posted}
                         </Typography>
                     </TableCell>
-                    <TableCell align="center" className={classes.cell} size="small" classes={{sizeSmall: classes.sizeSmall}}>
-                        <Box border={2} borderRadius="50px" className={classes[row.status]} >
+                    <TableCell align="center" className={classes.cell} size="small"
+                               classes={{sizeSmall: classes.sizeSmall}}>
+                        <Box border={2} borderRadius="50px" className={classes[row.status]}>
                             <Grid container justify="center" alignItems="center" classes={{root: classes.root}}>
                                 {row.status}
                             </Grid>
                         </Box>
                     </TableCell>
                     <TableCell align="center" className={classes.cell}>
-                        <Grid container alignItems="center"className={classes.container}>
+                        <Grid container alignItems="center" className={classes.container}>
                             <span className={classes.stats}>{row.stats}</span>
                             <span className={classes.views}>{row.views}</span>
                             {row.stats > 0
