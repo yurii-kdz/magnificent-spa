@@ -4,6 +4,7 @@ import Body from "./components/Body/Body";
 import Container from '@material-ui/core/Container';
 import {
     BrowserRouter as Router,
+    Switch
 } from "react-router-dom";
 
 const App = () => {
@@ -11,8 +12,8 @@ const App = () => {
     return (
         <Container disableGutters>
             <Router>
-                <Header />
-                <Body />
+                <Header/>
+                <Body/>
             </Router>
         </Container>
     );

@@ -21,7 +21,7 @@ const useStyles = makeStyles( theme =>({
         width: "5px"
     },
     ul: {
-        fontSize: "16px",
+        fontSize: theme.typography.htmlFontSize,
         "& li" : {
             "& button" : {
                 background: theme.palette.grey[100],

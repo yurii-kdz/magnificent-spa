@@ -9,12 +9,10 @@ import {
 const Content = () => {
     return (
         <Switch>
-            <Route exact path="/" component={
-                () => <BlogView/>
-            }>
+            <Route exact path="/" render={() => <BlogView/>}>
             </Route>
-            <Route exact path="/createView">
-                <CreateView/>
+            <Route exact path="/createView" render={() => <CreateView/>}>
+
             </Route>
         </Switch>
     )
