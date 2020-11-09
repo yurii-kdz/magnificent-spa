@@ -13,7 +13,9 @@ const App = () => {
         <Container disableGutters>
             <Router>
                 <Header/>
-                <Body/>
+                <Switch>
+                    <Body/>
+                </Switch>
             </Router>
         </Container>
     );
