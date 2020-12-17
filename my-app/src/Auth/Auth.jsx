@@ -1,20 +1,22 @@
 import React from 'react';
-import Login from './Login/Login';
-import Registration from './Registration/Registration';
+import {Route, Switch} from 'react-router-dom';
 import {Grid, Typography} from "@material-ui/core";
 import useStyles from "./style";
+import Login from './Login/Login';
+import Registration from './Registration/Registration';
 
 const Auth = () => {
     const classes = useStyles();
     return (
-        <>
-            <Grid item className = {classes.item} justify= 'center'>
-                <Typography variant="p"> Rival </Typography>
-                <Typography variant="p"> CMS </Typography>
-            </Grid>
-            <Login/>
-            <Registration />
-        </>
+        <Switch>
+            <Route exact path='/login'>
+                <Login/>
+            </Route>
+            <Route exact path='/reg'>
+                <Registration />
+            </Route>
+
+        </Switch>
     )
 
 };

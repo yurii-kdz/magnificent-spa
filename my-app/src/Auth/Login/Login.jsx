@@ -3,6 +3,7 @@ import {Form, Formik, Field} from "formik";
 import {FormGroup, Grid, InputLabel, TextField, Typography, Button} from "@material-ui/core";
 import {object,  string} from "yup";
 import useStyles from './../style';
+import validation from "./validation";
 
 
 const initialValues = {
@@ -16,15 +17,10 @@ const Login = () => {
         <Grid container wrap = 'wrap' alignItems='center' justify= 'center' className = {classes.container}>
             <Formik
                 validationSchema={
-                    object({
-                        email: string().email().required(),
-                        password: string().matches(
-                            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-                            "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
-                        ).required().min(8),
-                    })
+                    object(validation)
                 }
                 initialValues={initialValues}
+                onSubmit={() => ({})}
             >
                 {({values, errors}) => (
                     <Form>

@@ -2,8 +2,6 @@ import React from 'react';
 import {Field, Form, Formik, useField} from "formik";
 import {
     Button,
-    Checkbox,
-    FormControlLabel,
     FormGroup,
     Grid,
     InputLabel,
@@ -12,27 +10,16 @@ import {
 } from "@material-ui/core";
 import {boolean, object, ref, string} from "yup";
 import useStyles from './../style';
+import validation from "./validation";
+import CustomCheckbox from "../../components/CustomCheckbox/CustomCheckbox";
 
-const CustomCheckbox = (props) => {
-    const [field] = useField({
-        name: props.name,
-        type: 'checkbox',
-        value: props.value,
-    })
-    return (
-        <FormControlLabel
-            control={<Checkbox {...props} {...field} />}
-            label={props.label}
-        />
-    )
-}
 const initialValues = {
     email: '',
     password: '',
     checkbox: false,
 }
 
-const Login = () => {
+const Registration = () => {
     const classes = useStyles();
     return (
         <Grid container wrap='wrap' alignItems='center' justify='center' className={classes.container}>
@@ -41,18 +28,10 @@ const Login = () => {
             </Grid>
             <Formik
                 validationSchema={
-                    object({
-                        email: string().email().required(),
-                        password: string().matches(
-                            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-                            "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
-                        ).required().min(8),
-                        repeatPassword: string()
-                            .oneOf([ref('password'), null], 'Passwords must match'),
-                        checkbox: boolean().oneOf([true], 'Прочтите!'),
-                    })
+                    object(validation)
                 }
                 initialValues={initialValues}
+                onSubmit={() => ({})}
             >
                 {({values, errors}) => (
                     <Form>
@@ -85,4 +64,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;

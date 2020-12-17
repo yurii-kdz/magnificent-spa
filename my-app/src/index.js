@@ -4,15 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {ThemeProvider} from "@material-ui/styles";
+import {Provider} from "react-redux";
 import theme from "./themes/theme";
+import store from "./store";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <App/>
-        </ThemeProvider>
+    <Provider store={store}>
+        <React.StrictMode>
+            <ThemeProvider theme={theme}>
+                <App/>
+            </ThemeProvider>
 
-    </React.StrictMode>,
+        </React.StrictMode>
+    </Provider>,
+
     document.getElementById('root')
 );
 
