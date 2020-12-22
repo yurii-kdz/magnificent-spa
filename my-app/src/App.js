@@ -6,6 +6,8 @@ import {
     BrowserRouter as Router,
     Switch
 } from "react-router-dom";
+import Auth from "./Auth/Auth";
+
 
 const App = () => {
 
@@ -15,6 +17,7 @@ const App = () => {
                 <Header/>
                 <Switch>
                     <Body/>
+                    <Auth />
                 </Switch>
             </Router>
         </Container>
